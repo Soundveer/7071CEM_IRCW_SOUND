@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh; /* Optional, if you want the content centered vertically on the page */
+       
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .header {
+      margin-top: 10px;
+    }
+
+    .searchForm {
+      margin-top: 50px;
+      margin-left: 400px;
+    }
+
+    form {
+      background-color: #466fe1;
+      width: 500px;
+      height: 50px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      all: unset;
+      font: 16px system-ui;
+      color: #fff;
+      height: 100%;
+      width: 100%;
+      padding: 2px;
+    }
+
+    ::placeholder {
+      color: #fff;
+      opacity: 0.7;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+    }
+
+    svg {
+      color: #c73c3c;
+      fill: currentColor;
+      width: 24px;
+      height: 24px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="col mt-5 content">
+      <img src="{{url_for('static', filename='./images/coventry-university-logo.png')}}" class="mx-auto d-block" style="width: 50%; height: 50%">
+      <div class="header">
+        <h1 style="font-family:Arial, Helvetica, sans-serif"><strong>CU CGL Papers</strong></h1>
+      </div>
+      <form class="searchForm" action="/search_results">
+        <input type="text" class="searchTerm" name="search" required placeholder="Search for CGL authors and published papers">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
